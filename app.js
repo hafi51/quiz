@@ -1,4 +1,5 @@
 
+
 function Ques(ques,A,B,C,correctAns,quesNum){
     this.ques = ques;
     this.A = A;
@@ -24,14 +25,17 @@ function start(){
 }
 
 function next(){
-    console.log(counter)
     counter++
     showQues(counter)
     document.getElementById('prev').style.display = "unset"
+    a = document.getElementsByClassName("choice")
+            for(var i = 0; i < a.length; i++){
+                a[i].style.background = "#efefef"
+                a[i].style.color = "#575757"
+            }
 }
 function prev(){
     counter--
-    console.log(counter)
     showQues(counter)
 }
 
@@ -55,4 +59,29 @@ function showQues(e){
 function submit(){
     document.getElementById('wrapper').style.display = "none"
     document.getElementById('result').style.display = "unset"
+}
+
+function idReturn(e){
+    result = 0
+        if(e.value === quesArr[counter].correctAns){
+            result++
+            //console.log(result)
+            a = document.getElementsByClassName("choice")
+            for(var i = 0; i < a.length; i++){
+                a[i].style.background = "#efefef"
+                a[i].style.color = "#575757"
+            }
+            e.style.background = "#66bb6a"
+            e.style.color = "#eeeeee"
+        }else{
+            a = document.getElementsByClassName("choice")
+            for(var i = 0; i < a.length; i++){
+                a[i].style.background = "#efefef"
+                a[i].style.color = "#575757"
+            }
+            e.style.background = "#66bb6a"
+            e.style.color = "#eeeeee"
+            e.style.background = "#f44336"
+            e.style.color = "#eeeeee"
+        }  
 }

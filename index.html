@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>quiz</title>
+    <title>Quiz</title>
 </head>
 <body>
     <div class="container" id="container">
@@ -12,9 +12,9 @@
         <div class="wrapper" id="wrapper">
             <div class="ques" id="ques"></div>
         <div class="answer" id="ans">
-            <button id="A"></button>
-            <button id="B"></button>
-            <button id="C"></button>
+            <button id="A" class="choice" onclick="idReturn(this)"></button>
+            <button id="B" class="choice" onclick="idReturn(this)"></button>
+            <button id="C" class="choice" onclick="idReturn(this)"></button>
         </div>
         <button onclick="next()">Next</button>
         <button onclick="prev()" id="prev">Previous</button>
