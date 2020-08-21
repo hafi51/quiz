@@ -11,10 +11,26 @@ body{
     /* display: grid;
     grid-template-rows: 70px auto; */
     border: 5px;
-    height: 425px;
+    height: 500px;
     border-radius: 5px;
     padding-top: 10px;
     box-shadow: -1px -1px 6px rgba(255, 255, 255, 0.9), 4px 4px 9px rgba(0, 0, 0, 0.3);
+}
+.bar{
+    width: 180px;
+    height: 25px;
+    background-color: #e0f7fa;
+    position: absolute;
+    border: #007c91 solid 2px;
+    border-radius: 35px;
+    margin: 25px 330px;
+    visibility: hidden;
+}
+.pgrBar{
+    width: 0px;
+    height: 25px;
+    background-color: #00acc1;
+    border-radius: 35px;
 }
 #wrapper{
     display: none;
@@ -23,7 +39,7 @@ body{
     font-size: 3em;
     width: 250px;
     height: 100px;
-    margin: 155px auto;
+    margin: 180px auto;
     border-radius: 5px;
     background-color: transparent;
     box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.3);

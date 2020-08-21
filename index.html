@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="container" id="container">
+        <div class="bar" id="bar">
+            <div class="pgrBar" id="pgrBar"></div>
+        </div>
         <button id="start" onclick="start()">Start Quiz</button>
         <div class="wrapper" id="wrapper">
             <div class="ques" id="ques"></div>
@@ -20,7 +23,7 @@
         <button onclick="prev()" id="prev">Previous</button>
         <button onclick="submit()">Submit</button>
         </div>
-        <button id="result">Result</button>
+        <button id="result" onclick="checkResult()">Result</button>
     </div>
 </body>
 <script src="app.js"></script>

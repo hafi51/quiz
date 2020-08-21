@@ -18,16 +18,22 @@ var quesArr = [ques1,ques2,ques3,ques4]
 counter = 0;
 
 function start(){
-    document.getElementById('wrapper').style.display = "unset"
+    document.getElementById('wrapper').style.display = "inherit"
+    document.getElementById('wrapper').style.marginTop = "80px"
+    document.getElementById('bar').style.visibility = "visible"
     document.getElementById('start').style.display = "none"
     document.getElementById('prev').style.display = "none"
     showQues(counter)
 }
-
+width = 0;
 function next(){
     counter++
     showQues(counter)
+    document.getElementById('bar').style.visibility = "visible"
     document.getElementById('prev').style.display = "unset"
+    width += 25
+    document.getElementById('pgrBar').style.width = width + '%'
+
     a = document.getElementsByClassName("choice")
             for(var i = 0; i < a.length; i++){
                 a[i].style.background = "#efefef"
@@ -37,6 +43,8 @@ function next(){
 function prev(){
     counter--
     showQues(counter)
+    width -= 25
+    document.getElementById('pgrBar').style.width = width + '%'
 }
 
 function showQues(e){
@@ -59,13 +67,14 @@ function showQues(e){
 function submit(){
     document.getElementById('wrapper').style.display = "none"
     document.getElementById('result').style.display = "unset"
+    document.getElementById('bar').style.visibility = "hidden"
 }
-
+result = 0
 function idReturn(e){
-    result = 0
+    
         if(e.value === quesArr[counter].correctAns){
-            result++
-            //console.log(result)
+            result += 10
+            console.log(result)
             a = document.getElementsByClassName("choice")
             for(var i = 0; i < a.length; i++){
                 a[i].style.background = "#efefef"
@@ -84,4 +93,7 @@ function idReturn(e){
             e.style.background = "#f44336"
             e.style.color = "#eeeeee"
         }  
+}
+function checkResult(){
+    alert(result)
 }
