@@ -127,6 +127,7 @@ button:hover{
     .pgrBar {
         background-color: #ec9990;
         border-radius: 4px;
+        height: 20px;
     }
     .wrapper{
         margin: auto;
