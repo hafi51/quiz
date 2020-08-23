@@ -20,7 +20,8 @@ counter = 0;
 function start(){
     document.getElementById('wrapper').style.display = "inherit"
     document.getElementById('wrapper').style.marginTop = "80px"
-    document.getElementById('bar').style.visibility = "visible"
+    document.getElementById('bar').style.display = "inherit"
+    document.getElementById('next').style.marginLeft = '85px'
     document.getElementById('start').style.display = "none"
     document.getElementById('prev').style.display = "none"
     showQues(counter)
@@ -33,6 +34,7 @@ function next(){
     document.getElementById('prev').style.display = "unset"
     width += 25
     document.getElementById('pgrBar').style.width = width + '%'
+    document.getElementById('next').style.marginLeft = '15px'
 
     a = document.getElementsByClassName("choice")
             for(var i = 0; i < a.length; i++){
