@@ -92,8 +92,23 @@ button:hover{
     color: #e6e6e6;
     background-color: #00bcd4; 
 }
-#result{
+#result {
     display: none;
+    font-size: 2em;
+    width: 130px;
+    height: 68px;
+    margin: 80px auto 20px auto;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.3);
+}
+#resultDiv{
+    width: 380px;
+    height: 300px;
+    margin: 50px auto;
+    font-size: 2em;
+    color: #6a6a6a;
+    /* text-align: left; */
 }
 
 @media screen and (max-width:550px){
@@ -170,5 +185,13 @@ button:hover{
     }
     #next{
         margin-left: 85px;
+    }
+    #result{
+        position: absolute;
+        top: 10px;
+        margin-left: 33%;
+    }
+    #resultDiv{
+        margin: 55% 0px 0px 0px;
     }
 }

@@ -1,5 +1,4 @@
 
-
 function Ques(ques,A,B,C,correctAns,quesNum){
     this.ques = ques;
     this.A = A;
@@ -21,7 +20,6 @@ function start(){
     document.getElementById('wrapper').style.display = "inherit"
     document.getElementById('wrapper').style.marginTop = "80px"
     document.getElementById('bar').style.display = "inherit"
-    // document.getElementById('next').style.marginLeft = 'unset'
     document.getElementById('start').style.display = "none"
     document.getElementById('prev').style.display = "none"
     showQues(counter)
@@ -99,5 +97,31 @@ function idReturn(e){
         }  
 }
 function checkResult(){
-    alert(result)
+    // alert(result)
+    cont =document.getElementById('container')
+    resultDiv = document.createElement('div')
+    br = document.createElement('br')
+    resultGot = document.createTextNode("You got: " + result);
+    resultTotal = document.createTextNode("Out of: " + quesArr.length*10)
+    resultPer = (result/(quesArr.length*10))*100
+    resultAge = document.createTextNode("Percentage: " + resultPer + '%')
+    resultDiv.setAttribute('id','resultDiv')
+    cont.appendChild(resultDiv)
+    
+    resultDiv.appendChild(resultGot)
+    resultDiv.appendChild(br)
+
+    resultDiv.appendChild(resultTotal)
+    resultDiv.appendChild(document.createElement("br"))
+    resultDiv.appendChild(resultAge)
+    // resultP = document.createElement('p')
+    // resultDiv.appendChild(resultP)
+    // resultImg = document.createTextNode('<i class="fab fa-500px"></i>')
+    // resultP.appendChild(resultImg)
+
+    // if(resultPer <= 80){
+    //     alert("in f")
+    //     resultImg = '<i class="fab fa-500px"></i>'
+    // } 
+    document.getElementById('result').setAttribute('disabled','disabled')
 }
