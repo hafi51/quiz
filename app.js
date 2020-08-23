@@ -95,9 +95,10 @@ function idReturn(e){
             e.style.background = "#f44336"
             e.style.color = "#eeeeee"
         }  
+    // width += 25
+    // document.getElementById('pgrBar').style.width = width + '%'
 }
 function checkResult(){
-    // alert(result)
     cont =document.getElementById('container')
     resultDiv = document.createElement('div')
     br = document.createElement('br')
@@ -114,14 +115,29 @@ function checkResult(){
     resultDiv.appendChild(resultTotal)
     resultDiv.appendChild(document.createElement("br"))
     resultDiv.appendChild(resultAge)
-    // resultP = document.createElement('p')
-    // resultDiv.appendChild(resultP)
-    // resultImg = document.createTextNode('<i class="fab fa-500px"></i>')
-    // resultP.appendChild(resultImg)
+    resultP = document.createElement('p')
+    resultDiv.appendChild(resultP)
+    resultP.setAttribute('id','p')
+    resultP.style.fontSize = '50px'
+    resultP.style.margin = '35px'
+    if(resultPer == 0){
+        resultP.innerHTML = '<i class="far fa-sad-tear"></i>'
+        resultP.style.color = '#f05b5b'
+    }else if(resultPer >= 80){
+        resultP.innerHTML = '<i class="far fa-grin-hearts"></i>'
+        resultP.style.color = 'green'
+    }else if(resultPer >= 60){
+        resultP.innerHTML = '<i class="far fa-smile"></i>'
+        resultP.style.color = '#b5e650'
+    }else if(resultPer >= 40){
+        resultP.innerHTML = '<i class="far fa-meh"></i>'
+        resultP.style.color = '#e2e208'
+    }else if(resultPer >= 20){
+        resultP.innerHTML = '<i class="far fa-frown"></i>'
+        resultP.style.color = '#da9415'
+    }
 
-    // if(resultPer <= 80){
-    //     alert("in f")
-    //     resultImg = '<i class="fab fa-500px"></i>'
-    // } 
+
+
     document.getElementById('result').setAttribute('disabled','disabled')
 }

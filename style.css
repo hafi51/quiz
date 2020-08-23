@@ -108,7 +108,6 @@ button:hover{
     margin: 50px auto;
     font-size: 2em;
     color: #6a6a6a;
-    /* text-align: left; */
 }
 
 @media screen and (max-width:550px){
