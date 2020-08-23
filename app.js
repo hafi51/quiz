@@ -21,7 +21,7 @@ function start(){
     document.getElementById('wrapper').style.display = "inherit"
     document.getElementById('wrapper').style.marginTop = "80px"
     document.getElementById('bar').style.display = "inherit"
-    document.getElementById('next').style.marginLeft = '85px'
+    // document.getElementById('next').style.marginLeft = 'unset'
     document.getElementById('start').style.display = "none"
     document.getElementById('prev').style.display = "none"
     showQues(counter)
@@ -29,18 +29,20 @@ function start(){
 width = 0;
 function next(){
     counter++
-    showQues(counter)
     document.getElementById('bar').style.visibility = "visible"
     document.getElementById('prev').style.display = "unset"
     width += 25
     document.getElementById('pgrBar').style.width = width + '%'
+    document.getElementById('pgrBar').style.maxWidth = '100%'
     document.getElementById('next').style.marginLeft = '15px'
 
     a = document.getElementsByClassName("choice")
             for(var i = 0; i < a.length; i++){
                 a[i].style.background = "#efefef"
                 a[i].style.color = "#575757"
-            }
+            } 
+   showQues(counter)
+
 }
 function prev(){
     counter--

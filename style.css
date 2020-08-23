@@ -18,19 +18,20 @@ body{
 }
 .bar{
     width: 180px;
-    height: 25px;
+    height: 20px;
     background-color: #e0f7fa;
     position: absolute;
     border: #007c91 solid 2px;
     border-radius: 35px;
-    margin: 25px 330px;
+    margin: 10px 350px;
     display: none;
 }
 .pgrBar{
     width: 0px;
-    height: 25px;
+    height: 19px;
     background-color: #00acc1;
     border-radius: 35px;
+    margin: 1px 0px;
 }
 #wrapper{
     display: none;
@@ -164,5 +165,8 @@ button:hover{
         width: 200px;
         height: 75px;    
         border-radius: 10px;
+    }
+    #next{
+        margin-left: 85px;
     }
 }
