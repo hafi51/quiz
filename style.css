@@ -16,6 +16,16 @@ body{
     padding-top: 10px;
     box-shadow: -1px -1px 6px rgba(255, 255, 255, 0.9), 4px 4px 9px rgba(0, 0, 0, 0.3);
 }
+h3{
+    width: 40px;
+    height: 30px;
+    font-size: 1.5rem;
+    margin: 10px 30px;
+    font-family: cursive;
+    color: #4c4b4b;
+    position: absolute;
+    display: none;
+}
 .bar{
     width: 180px;
     height: 20px;
@@ -129,6 +139,9 @@ button:hover{
         align-items: center;
         margin: 0;
         padding: 0;
+    }
+    h3{
+        display: none !important;
     }
     .bar{
         margin: 20px 0;

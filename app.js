@@ -11,28 +11,33 @@ function Ques(ques,A,B,C,correctAns,quesNum){
 var ques1 = new Ques(" JavaScript Code can be called by using?","RMI","Function/Method","Preprocessor","Function/Method",1)
 var ques2 = new Ques("The type of a variable that is volatile is?","Volatile","Immutable","Mutable","Mutable",2)
 var ques3 = new Ques("A hexadecimal literal begins with?","0X","0x","both","both",3)
-var ques4 = new Ques("What is the full form of JS?","JavaScript","JavaSource","JavaSense","JavaScript",5)
+var ques4 = new Ques("What is the full form of JS?","JavaScript","JavaSource","JavaSense","JavaScript",4)
 
 var quesArr = [ques1,ques2,ques3,ques4]
 counter = 0;
-
+var quesNum = document.getElementById('quesNum')
 function start(){
     document.getElementById('wrapper').style.display = "inherit"
     document.getElementById('wrapper').style.marginTop = "80px"
     document.getElementById('bar').style.display = "inherit"
+    quesNum.style.display = "inherit" 
     document.getElementById('start').style.display = "none"
     document.getElementById('prev').style.display = "none"
+
     showQues(counter)
 }
 width = 0;
+classArr = document.getElementsByClassName('choice')
 function next(){
     counter++
     document.getElementById('bar').style.visibility = "visible"
     document.getElementById('prev').style.display = "unset"
-    width += 25
-    document.getElementById('pgrBar').style.width = width + '%'
     document.getElementById('pgrBar').style.maxWidth = '100%'
     document.getElementById('next').style.marginLeft = '15px'
+
+    for(i=0;i<classArr.length;i++){
+        classArr[i].removeAttribute("disabled")
+    }
 
     a = document.getElementsByClassName("choice")
             for(var i = 0; i < a.length; i++){
@@ -40,16 +45,21 @@ function next(){
                 a[i].style.color = "#575757"
             } 
    showQues(counter)
-
+    // if(quesArr[3]){
+    //     document.getElementById('next').style.display = 'none'
+    // }
 }
 function prev(){
     counter--
     showQues(counter)
-    width -= 25
-    document.getElementById('pgrBar').style.width = width + '%'
+    if(document.getElementById('next').style.display == 'none'){
+        document.getElementById('next').style.display = 'inline-block'
+    }
 }
 
 function showQues(e){
+    
+    
     var ques = document.getElementById('ques') 
     ques.innerHTML = quesArr[e].ques
 
@@ -64,7 +74,16 @@ function showQues(e){
     var choiceC =document.getElementById('C')
     choiceC.innerHTML = quesArr[e].C
     choiceC.value = quesArr[e].C
+    quesNum.innerHTML = `${quesArr[e].quesNum}/${quesArr.length}`
+    if(quesArr[e].quesNum==quesArr.length){
+    document.getElementById('next').style.display = 'none'
+    }
+    if(quesArr[e].quesNum === 1){
+        document.getElementById('prev').style.display = 'none'
+    }
 }
+
+
 
 function submit(){
     document.getElementById('wrapper').style.display = "none"
@@ -76,7 +95,6 @@ function idReturn(e){
     
         if(e.value === quesArr[counter].correctAns){
             result += 10
-            console.log(result)
             a = document.getElementsByClassName("choice")
             for(var i = 0; i < a.length; i++){
                 a[i].style.background = "#efefef"
@@ -95,8 +113,12 @@ function idReturn(e){
             e.style.background = "#f44336"
             e.style.color = "#eeeeee"
         }  
-    // width += 25
-    // document.getElementById('pgrBar').style.width = width + '%'
+        
+        for(i=0;i<classArr.length;i++){
+            classArr[i].setAttribute("disabled","")
+        }
+    width += 25
+    document.getElementById('pgrBar').style.width = width + '%'
 }
 function checkResult(){
     cont =document.getElementById('container')
