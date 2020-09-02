@@ -45,9 +45,7 @@ function next(){
                 a[i].style.color = "#575757"
             } 
    showQues(counter)
-    // if(quesArr[3]){
-    //     document.getElementById('next').style.display = 'none'
-    // }
+
 }
 function prev(){
     counter--
@@ -77,6 +75,7 @@ function showQues(e){
     quesNum.innerHTML = `${quesArr[e].quesNum}/${quesArr.length}`
     if(quesArr[e].quesNum==quesArr.length){
     document.getElementById('next').style.display = 'none'
+    document.getElementById('prev').style.marginLeft = '99px'
     }
     if(quesArr[e].quesNum === 1){
         document.getElementById('prev').style.display = 'none'
