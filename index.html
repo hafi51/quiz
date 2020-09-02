@@ -17,15 +17,17 @@
         </div>
         <button id="start" onclick="start()">Start Quiz</button>
         <div class="wrapper" id="wrapper">
-            <div class="ques" id="ques"></div>
-        <div class="answer" id="ans">
-            <button id="A" class="choice" onclick="idReturn(this)"></button>
-            <button id="B" class="choice" onclick="idReturn(this)"></button>
-            <button id="C" class="choice" onclick="idReturn(this)"></button>
-        </div>
-        <button onclick="next()" id="next">Next</button>
-        <button onclick="prev()" id="prev" class="prev">Previous</button>
-        <button onclick="submit()">Submit</button>
+                <div class="ques" id="ques"></div>
+            <div class="answer" id="ans">
+                <button id="A" class="choice" onclick="idReturn(this)"></button>
+                <button id="B" class="choice" onclick="idReturn(this)"></button>
+                <button id="C" class="choice" onclick="idReturn(this)"></button>
+            </div>
+            <div class="btnDiv" id="btnDiv">
+                <button onclick="next()" id="next">Next</button>
+                <button onclick="prev()" id="prev" class="prev">Previous</button>
+                <button onclick="submit()">Submit</button>
+            </div>
         </div>
         <button id="result" onclick="checkResult()">Result</button>
     </div>
