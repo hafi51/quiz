@@ -210,8 +210,8 @@ button:hover{
     .btnDiv{
         position: absolute;
         bottom: 100px;
-        width: 88%;
-        margin-left: 20px;
+        width: 88% !important;
+        margin-left: 20px !important;
         display: flex;
         justify-content: space-evenly;
     }

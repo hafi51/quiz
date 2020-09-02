@@ -22,8 +22,6 @@ function start(){
     document.getElementById('bar').style.display = "inherit"
     quesNum.style.display = "inherit" 
     document.getElementById('start').style.display = "none"
-    document.getElementById('prev').style.display = "none"
-
     showQues(counter)
 }
 width = 0;
@@ -32,6 +30,8 @@ function next(){
     counter++
     document.getElementById('bar').style.visibility = "visible"
     document.getElementById('prev').style.display = "unset"
+    document.getElementById('btnDiv').style.width = '33%'
+    document.getElementById('btnDiv').style.marginLeft = '100px'
     document.getElementById('pgrBar').style.maxWidth = '100%'
     document.getElementById('next').style.marginLeft = '15px'
 
@@ -53,6 +53,8 @@ function prev(){
     if(document.getElementById('next').style.display == 'none'){
         document.getElementById('next').style.display = 'inline-block'
     }
+    document.getElementById('btnDiv').style.width = '33%'
+    document.getElementById('btnDiv').style.marginLeft = '100px'
 }
 
 function showQues(e){
@@ -75,10 +77,14 @@ function showQues(e){
     quesNum.innerHTML = `${quesArr[e].quesNum}/${quesArr.length}`
     if(quesArr[e].quesNum==quesArr.length){
     document.getElementById('next').style.display = 'none'
+    document.getElementById('btnDiv').style.width = '27%'
+    document.getElementById('btnDiv').style.marginLeft = '140px'
     document.getElementById('prev').style.marginLeft = '99px'
     }
     if(quesArr[e].quesNum === 1){
         document.getElementById('prev').style.display = 'none'
+        document.getElementById('btnDiv').style.width = '27%'
+        document.getElementById('btnDiv').style.marginLeft = '140px'
     }
 }
 
